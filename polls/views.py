@@ -49,7 +49,7 @@ def vote(request, question_id):
         # Redisplay the question voting form.
         return render(request, 'polls/detail.html', {
             'question': question,
-            'error_message': "You didn't select a choice.",
+            'error_message': "エラー：何も選択されていません。",
         })
     else:
         selected_choice.votes += 1

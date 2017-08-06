@@ -1,6 +1,16 @@
 {% load staticfiles %}
 <html>
 <head>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104070078-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
   <title>Meloon</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -17,15 +27,17 @@
           <div class="row">
               <div class="col-md-8">
                 <div class="post">
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <h1><a href="{% url 'polls:detail' question.id %}">{{ question.question_title }}</a></h1>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+                  {% block content %}
+                  {% if latest_question_list %}
+                  <ul>
+                    {% for question in latest_question_list %}
+                    <h1><a href="{% url 'polls:detail' question.id %}">{{ question.question_title }}</a></h1>
+                    {% endfor %}
+                  </ul>
+                  {% else %}
+                  <p>No polls are available.</p>
+                  {% endif %}
+                  {% endblock %}
               </div>
             </div>
         </div>
