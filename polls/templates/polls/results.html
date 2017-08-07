@@ -7,7 +7,7 @@
         <img src="{% static 'polls/images/thumb1.jpg' %}"><br>
         <br>
         <h2>
-        <p>{{ question.question_text }}</p></h2>
+        <p>{{ question.question_text|linebreaks }}</p></h2>
 
         <ul>
           <h1>
