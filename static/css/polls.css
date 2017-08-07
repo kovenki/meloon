@@ -67,6 +67,7 @@ h1, h2, h3, h4 {
 }
 
 
+
 input[type=radio], input[type=checkbox] {
   display: none;
 }
@@ -78,17 +79,17 @@ input[type=radio], input[type=checkbox] {
   position: relative;
   display: inline-block;
   margin: 0 20px 8px 0;
-  padding: 12px 12px 12px 42px;
+  padding: 34px 34px 34px 42px;
   border-radius: 8px;
-  background-color: #f6f7f8;
+  background-color: #fceaf0;
   vertical-align: middle;
   cursor: pointer;
 }
 .radio:hover {
-  background-color: #e2edd7;
+  background-color: #f9a2c0;
 }
 .radio:hover:after {
-  border-color: #53b300;
+  border-color: #f22e72;
 }
 .radio:after {
   -webkit-transition: border-color 0.2s linear;
@@ -110,16 +111,34 @@ input[type=radio], input[type=checkbox] {
   transition: opacity 0.2s linear;
   position: absolute;
   top: 50%;
-  left: 20px;
+  left: 18px;
   display: block;
-  margin-top: -5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: #53b300;
+  margin-top: -6.5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 30%;
+  background-color: #f713a0;
   content: '';
   opacity: 0;
 }
 input[type=radio]:checked + .radio:before {
   opacity: 1;
+}
+
+
+
+.sbt_1{
+	width:40%;
+	height:70px;
+	background-color:#ff0073;
+	border:none;
+	color:#fff;
+	font-size:200%;
+  border-radius: 19px;
+	font-weight:700;
+
+}
+.sbt_1:hover{
+	background-color:#66545f !important;
+	color:#fff;
 }

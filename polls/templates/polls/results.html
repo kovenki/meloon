@@ -17,6 +17,6 @@
         </h1>
         </ul>
 
-        <h2><a href="{% url 'polls:detail' question.id %}">もう一度投票する</a></h2>
+        <input type="submit" value="もう1度" onclick="location.href='{% url 'polls:detail' question.id %}'" class="sbt_1" />
 </ul>
 {% endblock %}
