@@ -19,14 +19,31 @@
     });
   </script>
   <title>Meloon</title>
+  <script type="text/javascript">
+  if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+    document.write('<link rel="stylesheet" href="{% static 'css/sp_polls.css' %}">');
+  }else {
+        document.write('<link rel="stylesheet" href="{% static 'css/polls.css' %}">');
+    }
+</script>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Audiowide|Bungee+Outline|Lobster" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/polls.css' %}">
+  <script type="text/javascript">
+  if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+    document.write('<link rel="stylesheet" href="{% static 'css/sp_polls.css' %}">');
+  }else {
+        document.write('<link rel="stylesheet" href="{% static 'css/polls.css' %}">');
+    }
+</script>
 </head>
+
+
+
+
 <div class="page-header">
-    <h1><a href="/polls">Meloon<br><span style="font-size:large">-- みんなで決めよう、なんでも総選挙 --</span></a></h1>
+    <h1><a href="/polls">Meloon<br><h4>-- みんなで決めよう、なんでも総選挙 --</h4></a></h1>
 </div>
 <!--<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />-->
     <body>
@@ -39,7 +56,7 @@
                   <ul>
                     {% for question in latest_question_list %}
                     <h1><a href="{% url 'polls:detail' question.id %}">{{ question.question_title }}</a></h1>
-                    <img src="{% static 'polls/images/background.gif' %}">
+                    <img src="{% static 'polls/images/thumb1.jpg' %}">
                     {% endfor %}
                   </ul>
                   {% else %}

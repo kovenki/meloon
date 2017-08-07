@@ -1,7 +1,11 @@
 {% extends 'polls/index.html' %}
+{% load staticfiles %}
 
 {% block content %}
+<ul>
         <h1>{{ question.question_title }}</h1>
+        <img src="{% static 'polls/images/thumb1.jpg' %}"><br>
+        <br>
         <p>{{ question.question_text }}</p>
 
         <ul>
@@ -10,5 +14,6 @@
           {% endfor %}
         </ul>
 
-        <a href="{% url 'polls:detail' question.id %}">もう一度投票する</a>
+        <h2><a href="{% url 'polls:detail' question.id %}">もう一度投票する</a></h2>
+</ul>
 {% endblock %}
