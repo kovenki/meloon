@@ -8,14 +8,14 @@
     color: #ffffff;
     font-size: 57pt;
     text-decoration: none;
-    font-family: 'Bungee Outline','Lobster';
+    font-family: 'Lobster Two', cursive;
     font-weight: bold;
 }
 
 .page-header h4 {
     color: #ffffff;
-    font-size: 10%;
-    font-family: 'Bungee Outline','Lobster';
+    font-size: 26%;
+    font-family: 'Lobster Two', cursive;
     font-weight: bold;
 }
 
@@ -25,7 +25,7 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Rounded Mplus 1cster';
+    font-family: 'Lobster Two', cursive;
 }
 
 .date {
@@ -54,6 +54,6 @@ h1, h2, h3, h4 {
 
 .post h1 a, .post h1 a:visited {
     color: #000000;
-    font-family: 'Rounded Mplus 1cster';
+    font-family: 'Lobster Two', cursive;
     font-weight: bold;
 }
