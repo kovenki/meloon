@@ -9,9 +9,6 @@ from django.utils import timezone
 from django.http import HttpResponse
 
 
-def kakikomi(request):
-     f = KakikomiForm()
-     return HttpResponse(f)
 
 class IndexView(generic.ListView):
     template_name = 'diagnosis/index.html'

@@ -3,11 +3,11 @@
 
 {% block content %}
 <ul>
-<h1><a>{{ question.questionDiagnosis_title }}</a></h1>
-    <img src="{% static 'diagnosis/images/thumb1.jpg' %}"><br>
+<h1><a>{{ questionDiagnosis_title }}</a></h1>
+    <img src="/static/polls/images/thumb{{question.id}}.jpg"><br>
             <br>
             <h2>
-            <p>{{ question.questionDiagnosis_text|linebreaks }}</p>
+            <p>{{ questionDiagnosis_text|linebreaks }}</p>
               {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}</h2>
 
               {% csrf_token %}
