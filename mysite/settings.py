@@ -34,7 +34,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'shindan.apps.ShindanConfig',
     'polls.apps.PollsConfig',
+    'diagnosis.apps.DiagnosisConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,6 +72,10 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DIRS = (
+     'djangofirst/shindan/templates/',
+)
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 

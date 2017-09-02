@@ -1,0 +1,144 @@
+.page-header {
+    background-color: #ff0073;
+    margin: 0px 0px 20px;
+    padding: 5px 20px 10px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 57pt;
+    text-decoration: none;
+    font-family: 'Lobster Two', cursive;
+    font-weight: bold;
+}
+
+.page-header h4 {
+    color: #ffffff;
+    font-size: 26%;
+    font-family: 'Lobster Two', cursive;
+    font-weight: bold;
+}
+
+
+.content {
+    margin-left: 40px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Rounded Mplus 1cster';
+    -webkit-text-size-adjust: 100%;
+    width: 100%;
+}
+
+.date {
+    float: right;
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin-bottom: 70px;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #000000;
+    font-family: 'Rounded Mplus 1cster';
+    font-weight: bold;
+}
+
+.post h1 {
+    color: #000000;
+    font-family: 'Rounded Mplus 1cster';
+    font-weight: bold;
+}
+
+
+
+input[type=radio], input[type=checkbox] {
+  display: none;
+}
+
+.radio {
+  box-sizing: border-box;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+  position: relative;
+  display: inline-block;
+  margin: 0 20px 8px 0;
+  padding: 34px 34px 34px 42px;
+  border-radius: 8px;
+  background-color: #fceaf0;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.radio:hover {
+  background-color: #f9a2c0;
+}
+.radio:hover:after {
+  border-color: #f22e72;
+}
+.radio:after {
+  -webkit-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  display: block;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #bbb;
+  border-radius: 6px;
+  content: '';
+}
+
+.radio:before {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  display: block;
+  margin-top: -6.5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 30%;
+  background-color: #f713a0;
+  content: '';
+  opacity: 0;
+}
+input[type=radio]:checked + .radio:before {
+  opacity: 1;
+}
+
+
+
+.sbt_1{
+	width:40%;
+	height:70px;
+	background-color:#ff0073;
+	border:none;
+	color:#fff;
+	font-size:200%;
+  border-radius: 19px;
+	font-weight:700;
+
+}
+.sbt_1:hover{
+	background-color:#66545f !important;
+	color:#fff;
+}

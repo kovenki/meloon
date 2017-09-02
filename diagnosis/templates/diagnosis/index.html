@@ -21,9 +21,9 @@
   <title>Meloon</title>
   <script type="text/javascript">
   if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-    document.write('<link rel="stylesheet" href="{% static 'css/sp_polls.css' %}">');
+    document.write('<link rel="stylesheet" href="{% static 'css/sp_diagnosis.css' %}">');
   }else {
-        document.write('<link rel="stylesheet" href="{% static 'css/polls.css' %}">');
+        document.write('<link rel="stylesheet" href="{% static 'css/diagnosis.css' %}">');
     }
 </script>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -33,9 +33,9 @@
   <link href="https://fonts.googleapis.com/css?family=Audiowide|Bungee+Outline|Lobster" rel="stylesheet">
   <script type="text/javascript">
   if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
-    document.write('<link rel="stylesheet" href="{% static 'css/sp_polls.css' %}">');
+    document.write('<link rel="stylesheet" href="{% static 'css/sp_diagnosis.css' %}">');
   }else {
-        document.write('<link rel="stylesheet" href="{% static 'css/polls.css' %}">');
+        document.write('<link rel="stylesheet" href="{% static 'css/diagnosis.css' %}">');
     }
 </script>
 </head>
@@ -44,9 +44,9 @@
 
 
 <div class="page-header">
-    <h1><a href="/polls">Meloon<br><h4> みんなで決める、なんでも総選挙</h4></a></h1>
+    <h1><a href="/diagnosis">Meloon<br><h4> みんなで決める、なんでも総選挙</h4></a></h1>
 </div>
-<!--<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />-->
+<!--<link rel="stylesheet" type="text/css" href="{% static 'diagnosis/style.css' %}" />-->
     <body>
       <div class="content container">
           <div class="row">
@@ -56,12 +56,12 @@
                   {% if latest_question_list %}
                   <ul>
                     {% for question in latest_question_list %}
-                    <h1><a href="{% url 'polls:detail' question.id %}">{{ question.question_title }}</a></h1>
-                    <a href="{% url 'polls:detail' question.id %}"><img src={% static "diagnosis/images/thumb1.jpg" %}></a>
+                    <h1><a href="{% url 'diagnosis:detail' question.id %}">{{ question.questionDiagnosis_title }}</a></h1>
+                    <a href="{% url 'diagnosis:detail' question.id %}"><img src="{% static 'diagnosis/images/thumb3.jpg' %}"></a>
                     {% endfor %}
                   </ul>
                   {% else %}
-                  <p>No polls are available.</p>
+                  <p>No diagnosis are available.</p>
                   {% endif %}
                   {% endblock %}
               </div>

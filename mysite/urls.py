@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from shindan.views import kakikomi
 
 urlpatterns = [
+    url(r'^diagnosis/',include('diagnosis.urls')),
     url(r'^polls/',include('polls.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'', include('polls.urls')),
+    url('^kakikomi1/$', kakikomi),
 ]
