@@ -12,6 +12,7 @@
 
               {% csrf_token %}
               {% for hint in questionDiagnosis.hint_set.all %}
+              <p>{{hint}}</p>
               <input type="radio" name="hint" id="hint{{ forloop.counter }}" value="{{ hint.id }}" />
               <label for="hint{{ forloop.counter }}" class="radio">{{ hint.hint_text }}</label><br><br>
               {% endfor %}</h1>
