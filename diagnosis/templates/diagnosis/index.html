@@ -53,11 +53,11 @@
               <div class="col-md-8">
                 <div class="post">
                   {% block content %}
-                  {% if latest_question_list %}
+                  {% if latest_questionDiagnosis_list %}
                   <ul>
-                    {% for question in latest_question_list %}
-                    <h1><a href="{% url 'diagnosis:detail' question.id %}">{{ question.questionDiagnosis_title }}</a></h1>
-                    <a href="{% url 'diagnosis:detail' question.id %}"><img src="/static/diagnosis/images/thumb{{question.id}}.jpg"></a>
+                    {% for questionDiagnosis in latest_questionDiagnosis_list %}
+                    <h1><a href="{% url 'diagnosis:detail' questionDiagnosis.id %}">{{ questionDiagnosis.questionDiagnosis_title }}</a></h1>
+                    <a href="{% url 'diagnosis:detail' questionDiagnosis.id %}"><img src="/static/diagnosis/images/thumb{{questionDiagnosis.id}}.jpg"></a>
                     {% endfor %}
                   </ul>
                   {% else %}

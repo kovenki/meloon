@@ -3,10 +3,6 @@ from django.db import models
 from django.utils import timezone
 from django import forms
 
-class KakikomiForm(forms.Form):
-     name = forms.CharField()
-     email = forms.EmailField()
-     body = forms.CharField()
 
 class QuestionDiagnosis(models.Model):
     questionDiagnosis_title = models.CharField(max_length=200)
@@ -22,7 +18,7 @@ class QuestionDiagnosis(models.Model):
     was_published_recently.short_description = 'Published recently?'
 
 class Hint(models.Model):
-    question = models.ForeignKey(QuestionDiagnosis, on_delete=models.CASCADE)
+    questionDiagnosis = models.ForeignKey(QuestionDiagnosis, on_delete=models.CASCADE)
     hint_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
     def __str__(self):

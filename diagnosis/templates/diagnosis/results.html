@@ -1,22 +1,22 @@
-{% extends 'polls/index.html' %}
+hint{% extends 'diagnosis/index.html' %}
 {% load staticfiles %}
 
 {% block content %}
 <ul>
-        <h1><a>{{ question.question_title }}</a></h1>
-        <img src="{% static 'polls/images/thumb1.jpg' %}"><br>
+        <h1><a>{{ questionDiagnosis.questionDiagnosis_title }}</a></h1>
+        <img src="{% static 'diagnosis/images/thumb1.jpg' %}"><br>
         <br>
         <h2>
-        <p>{{ question.question_text|linebreaks }}</p></h2>
+        <p>{{ questionDiagnosis.questionDiagnosis_text|linebreaks }}</p></h2>
 
         <ul>
           <h1>
-          {% for choice in question.choice_set.all %}
-          <li><strong>{{ choice.choice_text }}</strong><br> 　得票数　 {{ choice.votes }} 票</li><br>
+          {% for hint in questionDiagnosis.hint_set.all %}
+          <li><strong>{{ hint.hint_text }}</strong><br> 　得票数　 {{ hint.votes }} 票</li><br>
           {% endfor %}
         </h1>
         </ul>
 
-        <input type="submit" value="もう1度" onclick="location.href='{% url 'polls:detail' question.id %}'" class="sbt_1" />
+        <input type="submit" value="もう1度" onclick="location.href='{% url 'diagnosis:detail' questionDiagnosis.id %}'" class="sbt_1" />
 </ul>
 {% endblock %}

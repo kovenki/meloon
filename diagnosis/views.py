@@ -2,17 +2,16 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import loader
-from .models import Hint, QuestionDiagnosis, KakikomiForm
+from .models import Hint, QuestionDiagnosis
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
-from django.http import HttpResponse
 
 
 
 class IndexView(generic.ListView):
     template_name = 'diagnosis/index.html'
-    context_object_name = 'latest_question_list'
+    context_object_name = 'latest_questionDiagnosis_list'
 #    def get_queryset(self):
 #        """Return the last five published questions."""
 #        return QuestionDiagnosis.objects.order_by('-pub_date')[:5]
@@ -31,9 +30,11 @@ class DetailView(generic.DetailView):
     template_name = 'diagnosis/detail.html'
     def get_queryset(self):
         """
-        Excludes any questions that aren't published yet.
+        Excludes any questionDiagnosis that aren't published yet.
         """
         return QuestionDiagnosis.objects.filter(pub_date__lte=timezone.now())
+
+
 
 
 class ResultsView(generic.DetailView):

@@ -3,21 +3,22 @@
 
 {% block content %}
 <ul>
-<h1><a>{{ questionDiagnosis_title }}</a></h1>
-    <img src="/static/polls/images/thumb{{question.id}}.jpg"><br>
-            <br>
+<h1><a>{{ questionDiagnosis.questionDiagnosis_title }}</a></h1>
+    <img src="/static/diagnosis/images/thumb{{questionDiagnosis.id}}.jpg"><br>
             <h2>
-            <p>{{ questionDiagnosis_text|linebreaks }}</p>
-              {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}</h2>
+            <p>{{ questionDiagnosis.questionDiagnosis_text|linebreaks }}</p>
+              {% if error_message %}
+              <p>
+                <strong>
+                  {{ error_message }}
+                </strong>
+              </p>
+              {% endif %}
+            </h2>
 
               {% csrf_token %}
-              {% for hint in questionDiagnosis.hint_set.all %}
-              <p>{{hint}}</p>
-              <input type="radio" name="hint" id="hint{{ forloop.counter }}" value="{{ hint.id }}" />
-              <label for="hint{{ forloop.counter }}" class="radio">{{ hint.hint_text }}</label><br><br>
-              {% endfor %}</h1>
               <input type="text" name="name" id="id_name" /><br><br>
-              <input type="submit" value="診断する" class="sbt_1" />
+              <input type="submit" value="診断する" class="sbt_1" method="get" />
             </form>
 </ul>
 {% endblock %}
