@@ -16,9 +16,10 @@
               {% endif %}
             </h2>
 
-              {% csrf_token %}
               <input type="text" name="name" id="id_name" /><br><br>
-              <input type="submit" value="診断する" class="sbt_1" method="get" />
+              <form action="{% url 'diagnosis:vote' questiondiagnosis.id %}" method="post">
+                {% csrf_token %}
+              <input type="submit" value="診断する" class="sbt_1" />
             </form>
 </ul>
 {% endblock %}

@@ -6,6 +6,7 @@ from .models import Hint, QuestionDiagnosis
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+import random
 
 
 
@@ -49,10 +50,7 @@ def vote(request, questiondiagnosis_id):
         selected_hint = questiondiagnosis.hint_set.get(pk=request.POST['hint'])
     except (KeyError, Hint.DoesNotExist):
         # Redisplay the question voting form.
-        return render(request, 'diagnosis/detail.html', {
-            'questiondiagnosis': questiondiagnosis,
-            'error_message': "エラー：何も選択されていません。",
-        })
+        return HttpResponseRedirect(reverse('diagnosis:results', args=(questiondiagnosis.id,)))
     else:
         selected_hint.votes += 1
         selected_hint.save()
