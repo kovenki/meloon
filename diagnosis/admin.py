@@ -9,13 +9,13 @@ class HintInline(admin.TabularInline):
 
 class QuestionDiagnosisAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
-    search_fields = ['questionDiagnosis_text','questionDiagnosis_title']
+    search_fields = ['questiondiagnosis_text','questiondiagnosis_title']
     fieldsets = [
-        (None,               {'fields': ['questionDiagnosis_title','questionDiagnosis_text']}),
+        (None,               {'fields': ['questiondiagnosis_title','questiondiagnosis_text']}),
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
     ]
     inlines = [HintInline]
-    list_display = ('questionDiagnosis_title','questionDiagnosis_text', 'pub_date', 'was_published_recently')
+    list_display = ('questiondiagnosis_title','questiondiagnosis_text', 'pub_date', 'was_published_recently')
 
 
 admin.site.register(QuestionDiagnosis, QuestionDiagnosisAdmin)

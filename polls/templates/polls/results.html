@@ -4,7 +4,7 @@
 {% block content %}
 <ul>
         <h1><a>{{ question.question_title }}</a></h1>
-        <img src="{% static 'polls/images/thumb1.jpg' %}"><br>
+        <img src="/static/polls/images/thumb{{question.id}}.jpg"><br>
         <br>
         <h2>
         <p>{{ question.question_text|linebreaks }}</p></h2>

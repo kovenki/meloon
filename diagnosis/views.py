@@ -11,7 +11,7 @@ from django.utils import timezone
 
 class IndexView(generic.ListView):
     template_name = 'diagnosis/index.html'
-    context_object_name = 'latest_questionDiagnosis_list'
+    context_object_name = 'latest_questiondiagnosis_list'
 #    def get_queryset(self):
 #        """Return the last five published questions."""
 #        return QuestionDiagnosis.objects.order_by('-pub_date')[:5]
@@ -30,7 +30,7 @@ class DetailView(generic.DetailView):
     template_name = 'diagnosis/detail.html'
     def get_queryset(self):
         """
-        Excludes any questionDiagnosis that aren't published yet.
+        Excludes any questiondiagnosis that aren't published yet.
         """
         return QuestionDiagnosis.objects.filter(pub_date__lte=timezone.now())
 
@@ -43,14 +43,14 @@ class ResultsView(generic.DetailView):
 
 
 
-def vote(request, questionDiagnosis_id):
-    questionDiagnosis = get_object_or_404(QuestionDiagnosis, pk=questionDiagnosis_id)
+def vote(request, questiondiagnosis_id):
+    questiondiagnosis = get_object_or_404(QuestionDiagnosis, pk=questiondiagnosis_id)
     try:
-        selected_hint = questionDiagnosis.hint_set.get(pk=request.POST['hint'])
+        selected_hint = questiondiagnosis.hint_set.get(pk=request.POST['hint'])
     except (KeyError, Hint.DoesNotExist):
         # Redisplay the question voting form.
         return render(request, 'diagnosis/detail.html', {
-            'questionDiagnosis': questionDiagnosis,
+            'questiondiagnosis': questiondiagnosis,
             'error_message': "エラー：何も選択されていません。",
         })
     else:
@@ -59,4 +59,4 @@ def vote(request, questionDiagnosis_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse('diagnosis:results', args=(questionDiagnosis.id,)))
+        return HttpResponseRedirect(reverse('diagnosis:results', args=(questiondiagnosis.id,)))

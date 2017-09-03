@@ -3,20 +3,20 @@ hint{% extends 'diagnosis/index.html' %}
 
 {% block content %}
 <ul>
-        <h1><a>{{ questionDiagnosis.questionDiagnosis_title }}</a></h1>
+        <h1><a>{{ questiondiagnosis.questiondiagnosis_title }}</a></h1>
         <img src="{% static 'diagnosis/images/thumb1.jpg' %}"><br>
         <br>
         <h2>
-        <p>{{ questionDiagnosis.questionDiagnosis_text|linebreaks }}</p></h2>
+        <p>{{ questiondiagnosis.questiondiagnosis_text|linebreaks }}</p></h2>
 
         <ul>
           <h1>
-          {% for hint in questionDiagnosis.hint_set.all %}
+          {% for hint in questiondiagnosis.hint_set.all %}
           <li><strong>{{ hint.hint_text }}</strong><br> 　得票数　 {{ hint.votes }} 票</li><br>
           {% endfor %}
         </h1>
         </ul>
 
-        <input type="submit" value="もう1度" onclick="location.href='{% url 'diagnosis:detail' questionDiagnosis.id %}'" class="sbt_1" />
+        <input type="submit" value="もう1度" onclick="location.href='{% url 'diagnosis:detail' questiondiagnosis.id %}'" class="sbt_1" />
 </ul>
 {% endblock %}

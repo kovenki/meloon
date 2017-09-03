@@ -3,10 +3,10 @@
 
 {% block content %}
 <ul>
-<h1><a>{{ questionDiagnosis.questionDiagnosis_title }}</a></h1>
-    <img src="/static/diagnosis/images/thumb{{questionDiagnosis.id}}.jpg"><br>
+<h1><a>{{ questiondiagnosis.questiondiagnosis_title }}</a></h1>
+    <img src="/static/diagnosis/images/thumb{{questiondiagnosis.id}}.jpg"><br>
             <h2>
-            <p>{{ questionDiagnosis.questionDiagnosis_text|linebreaks }}</p>
+            <p>{{ questiondiagnosis.questiondiagnosis_text|linebreaks }}</p>
               {% if error_message %}
               <p>
                 <strong>
